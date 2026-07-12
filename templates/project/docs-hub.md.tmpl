@@ -1,0 +1,69 @@
+{{#if branding.logo}}
+![{{branding.title}} logo]({{branding.logo}})
+
+{{/if}}
+# {{theme.icon}} {{branding.title}} Documentation
+
+> {{branding.tagline}}
+
+{{#if branding.banner}}
+![{{branding.title}} preview]({{branding.banner}})
+{{/if}}
+
+{{about}}
+
+{{#if navigation}}
+## Documentation map
+
+{{#each navigation}}- [{{this.label}}]({{this.url}})
+{{/each}}
+{{/if}}
+
+{{#if features}}
+## System capabilities
+
+| Area | Description |
+| --- | --- |
+{{#each features}}| **{{this.title}}** | {{this.description}} |
+{{/each}}
+{{/if}}
+
+{{#if stack}}
+## Technology map
+
+| Component | Purpose |
+| --- | --- |
+{{#each stack}}| `{{this.name}}` | {{this.detail}} |
+{{/each}}
+{{/if}}
+
+{{#if quickStart.code}}
+## Bootstrap
+
+{{quickStart.fence}}{{quickStart.language}}
+{{quickStart.code}}
+{{quickStart.fence}}
+{{/if}}
+
+{{#if configuration}}
+## Configuration reference
+
+| Key | Required | Default | Description |
+| --- | :---: | --- | --- |
+{{#each configuration}}| `{{this.key}}` | {{this.required}} | `{{this.default}}` | {{this.description}} |
+{{/each}}
+{{/if}}
+
+[readme-port-manual-start-operations-notes]: # (readme-port:manual)
+
+[readme-port-manual-end-operations-notes]: # (/readme-port:manual)
+
+## Support, security, and changes
+
+{{#if links.support}}- Support: [open a request]({{links.support}})
+{{/if}}
+{{#if links.security}}- Security: [read the policy]({{links.security}})
+{{/if}}
+{{#if links.contributing}}- Contributions: [follow the guide]({{links.contributing}})
+{{/if}}
+- License: [{{license.name}}]({{license.url}}) (`{{license.spdx}}`)

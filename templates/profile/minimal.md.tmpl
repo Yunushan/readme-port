@@ -1,0 +1,39 @@
+{{#if owner.avatar}}
+![Portrait of {{owner.name}}]({{owner.avatar}})
+
+{{/if}}
+# {{theme.icon}} Hi, I am {{owner.name}}
+
+{{#if branding.banner}}
+![{{owner.name}} profile banner]({{branding.banner}})
+{{/if}}
+
+{{about}}
+
+{{#if badges}}
+{{#each badges}}[![{{this.alt}}]({{this.image}})]({{this.url}}) {{/each}}
+{{/if}}
+
+{{#if skills}}
+## I work with
+
+{{#each skills}}- **{{this.name}}:** {{this.detail}}
+{{/each}}
+{{/if}}
+
+{{#if projects}}
+## Selected projects
+
+{{#each projects}}- [**{{this.name}}**]({{this.url}}) — {{this.description}}
+{{/each}}
+{{/if}}
+
+{{#if socials}}
+## Find me
+
+{{#each socials}}[{{this.label}}]({{this.url}}){{this.separator}}{{/each}}
+{{/if}}
+
+[readme-port-manual-start-current-focus]: # (readme-port:manual)
+
+[readme-port-manual-end-current-focus]: # (/readme-port:manual)

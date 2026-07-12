@@ -1,0 +1,30 @@
+name: Feature request
+description: Propose a provider improvement, workflow, component, or usability change.
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Reader or maintainer problem
+      description: What is hard today, and for whom?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: Describe the smallest useful solution and its portable fallback.
+    validations:
+      required: true
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Scope
+      options: [All providers, Portable Markdown, GitHub, GitLab, Gitea, Forgejo, Bitbucket Cloud, Studio, CLI]
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered

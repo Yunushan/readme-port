@@ -1,0 +1,55 @@
+name: Bug report
+description: Report a reproducible problem in the CLI, Studio, template engine, or generated output.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping make ReadmePort more dependable. Remove secrets and personal data before submitting.
+  - type: input
+    id: version
+    attributes:
+      label: ReadmePort version
+      placeholder: 1.0.0
+    validations:
+      required: true
+  - type: dropdown
+    id: provider
+    attributes:
+      label: Target provider
+      options: [Portable, GitHub, GitLab, Gitea, Forgejo, Bitbucket Cloud]
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: Node 24, Ubuntu 24.04, CLI
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal reproduction
+      description: Include the command and the smallest safe configuration that reproduces the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed secrets, tokens, private URLs, and personal data.
+          required: true

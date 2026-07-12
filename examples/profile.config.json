@@ -1,0 +1,75 @@
+{
+  "$schema": "../schema/readme-port.schema.json",
+  "schemaVersion": 1,
+  "kind": "profile",
+  "template": "profile/professional",
+  "provider": {
+    "id": "github",
+    "mode": "enhanced",
+    "baseUrl": "https://github.com"
+  },
+  "theme": "nord",
+  "branding": {
+    "title": "Ada Example",
+    "tagline": "Platform engineer building boring, dependable infrastructure.",
+    "logo": "",
+    "banner": ""
+  },
+  "repository": {
+    "owner": "ada-example",
+    "name": "ada-example",
+    "defaultBranch": "main"
+  },
+  "owner": {
+    "name": "Ada Example",
+    "username": "ada-example",
+    "bio": "I design reliable developer platforms, automate operational toil, and document the decisions that keep systems understandable.",
+    "location": "Istanbul, Türkiye",
+    "website": "https://example.com",
+    "email": "hello@example.com",
+    "avatar": ""
+  },
+  "about": "I design reliable developer platforms, automate operational toil, and document the decisions that keep systems understandable.",
+  "badges": [],
+  "navigation": [],
+  "features": [],
+  "stack": [],
+  "quickStart": { "language": "bash", "commands": [] },
+  "installation": [],
+  "usage": [],
+  "configuration": [],
+  "roadmap": [],
+  "skills": [
+    { "name": "Cloud native", "detail": "Kubernetes, GitOps, observability, policy" },
+    { "name": "Linux and networking", "detail": "Automation, debugging, performance, hardening" },
+    { "name": "Developer experience", "detail": "Golden paths, CI/CD, documentation, self-service" }
+  ],
+  "projects": [
+    { "name": "Harborlight", "description": "A small GitOps control-plane starter.", "url": "https://example.com/harborlight", "stack": ["Kubernetes", "Argo CD"] },
+    { "name": "Signalbook", "description": "Operational runbooks that stay close to code.", "url": "https://example.com/signalbook", "stack": ["Markdown", "OpenTelemetry"] }
+  ],
+  "socials": [
+    { "label": "Website", "url": "https://example.com" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com" },
+    { "label": "Email", "url": "mailto:hello@example.com" }
+  ],
+  "links": {
+    "documentation": "",
+    "demo": "",
+    "support": "",
+    "security": "SECURITY.md",
+    "contributing": "CONTRIBUTING.md",
+    "license": "LICENSE"
+  },
+  "license": {
+    "name": "MIT License",
+    "spdx": "MIT",
+    "url": "../../LICENSE"
+  },
+  "custom": {},
+  "options": {
+    "showTableOfContents": false,
+    "preserveManualRegions": true,
+    "showProviderNote": false
+  }
+}

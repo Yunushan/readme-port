@@ -1,0 +1,119 @@
+{
+  "$schema": "../schema/readme-port.schema.json",
+  "schemaVersion": 1,
+  "kind": "project",
+  "template": "project/flagship",
+  "provider": {
+    "id": "github",
+    "mode": "enhanced",
+    "baseUrl": "https://github.com"
+  },
+  "theme": "midnight",
+  "branding": {
+    "title": "Northstar",
+    "tagline": "A calm operations dashboard for noisy distributed systems.",
+    "logo": "../../assets/logo.svg",
+    "banner": ""
+  },
+  "repository": {
+    "owner": "example",
+    "name": "northstar",
+    "defaultBranch": "main"
+  },
+  "owner": {
+    "name": "Northstar Maintainers",
+    "username": "example",
+    "bio": ""
+  },
+  "about": "Northstar turns service health, deployments, incidents, and ownership into one readable view. It is designed for small platform teams that need trustworthy context without another heavyweight control plane.",
+  "badges": [
+    {
+      "alt": "documentation ready",
+      "image": "https://img.shields.io/badge/docs-ready-22c55e",
+      "url": "../../docs/"
+    },
+    {
+      "alt": "MIT license",
+      "image": "https://img.shields.io/badge/license-MIT-0ea5e9",
+      "url": "../../LICENSE"
+    }
+  ],
+  "navigation": [
+    { "label": "Quick start", "anchor": "quick-start" },
+    { "label": "Usage", "anchor": "usage" },
+    { "label": "Contributing", "url": "../../CONTRIBUTING.md" },
+    { "label": "Security", "url": "../../SECURITY.md" }
+  ],
+  "features": [
+    { "title": "Service map", "description": "See ownership, dependencies, health, and recent changes together." },
+    { "title": "Incident context", "description": "Turn alerts into a short, ordered trail of useful evidence." },
+    { "title": "Portable deployment", "description": "Run locally, in containers, or on Kubernetes without a hosted dependency." }
+  ],
+  "stack": [
+    { "name": "Node.js", "detail": "API and background jobs" },
+    { "name": "PostgreSQL", "detail": "Durable operational data" },
+    { "name": "OpenTelemetry", "detail": "Vendor-neutral signals" }
+  ],
+  "quickStart": {
+    "language": "bash",
+    "commands": [
+      "git clone {{repository.cloneUrl}}",
+      "cd northstar",
+      "cp .env.example .env",
+      "docker compose up -d"
+    ]
+  },
+  "installation": [
+    {
+      "title": "Configure the environment",
+      "description": "Copy the example file and set the database connection.",
+      "language": "bash",
+      "code": "cp .env.example .env"
+    },
+    {
+      "title": "Start the stack",
+      "description": "Build and launch the services.",
+      "language": "bash",
+      "code": "docker compose up -d --build"
+    }
+  ],
+  "usage": [
+    {
+      "title": "Check system health",
+      "description": "The health endpoint is safe for container and load-balancer probes.",
+      "language": "bash",
+      "code": "curl http://localhost:8080/health"
+    }
+  ],
+  "configuration": [
+    { "key": "DATABASE_URL", "required": true, "default": "", "description": "PostgreSQL connection string" },
+    { "key": "PORT", "required": false, "default": "8080", "description": "HTTP listen port" }
+  ],
+  "roadmap": [
+    { "title": "Read-only service catalog", "done": true },
+    { "title": "Deployment comparison view", "done": true },
+    { "title": "Incident timeline exports", "done": false }
+  ],
+  "skills": [],
+  "projects": [],
+  "socials": [],
+  "links": {
+    "documentation": "../../docs/",
+    "demo": "",
+    "support": "",
+    "security": "../../SECURITY.md",
+    "contributing": "../../CONTRIBUTING.md",
+    "license": "../../LICENSE"
+  },
+  "license": {
+    "name": "MIT License",
+    "spdx": "MIT",
+    "url": "../../LICENSE"
+  },
+  "custom": {},
+  "options": {
+    "showTableOfContents": true,
+    "preserveManualRegions": true,
+    "showProviderNote": false
+  }
+}

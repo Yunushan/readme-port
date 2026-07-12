@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Build portable profile, project, and organization READMEs without sending your data anywhere." />
+    <title>ReadmePort Studio</title>
+    <link rel="icon" href="../assets/logo.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="ReadmePort Studio home">
+        <img src="../assets/logo.svg" alt="" width="42" height="42" />
+        <span>
+          <strong>ReadmePort</strong>
+          <small>Studio</small>
+        </span>
+      </a>
+      <div class="header-copy">
+        <span class="status-dot" aria-hidden="true"></span>
+        Local-only editor · no account or token
+      </div>
+    </header>
+
+    <main class="workspace">
+      <aside class="controls" aria-label="README configuration">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Configuration</p>
+            <h1>Shape your README</h1>
+          </div>
+          <button class="icon-button" id="resetButton" type="button" title="Reset example" aria-label="Reset example">↺</button>
+        </div>
+
+        <div class="field-grid two-column">
+          <label>
+            <span>Type</span>
+            <select id="kindField">
+              <option value="project">Project</option>
+              <option value="profile">Profile</option>
+              <option value="organization">Organization</option>
+            </select>
+          </label>
+          <label>
+            <span>Template</span>
+            <select id="templateField"></select>
+          </label>
+        </div>
+
+        <div class="field-grid two-column">
+          <label>
+            <span>Forge</span>
+            <select id="providerField">
+              <option value="portable">Portable</option>
+              <option value="github">GitHub</option>
+              <option value="gitlab">GitLab</option>
+              <option value="gitea">Gitea</option>
+              <option value="forgejo">Forgejo</option>
+              <option value="bitbucket">Bitbucket</option>
+            </select>
+          </label>
+          <label>
+            <span>Mode</span>
+            <select id="modeField">
+              <option value="portable">Portable</option>
+              <option value="enhanced">Enhanced</option>
+            </select>
+          </label>
+        </div>
+
+        <label>
+          <span>Theme</span>
+          <select id="themeField"></select>
+        </label>
+
+        <label>
+          <span>Title or name</span>
+          <input id="titleField" autocomplete="off" maxlength="100" />
+        </label>
+
+        <label>
+          <span>Tagline</span>
+          <textarea id="taglineField" rows="2" maxlength="240"></textarea>
+        </label>
+
+        <div class="field-grid two-column">
+          <label>
+            <span>Owner</span>
+            <input id="ownerField" autocomplete="off" />
+          </label>
+          <label>
+            <span>Repository</span>
+            <input id="repositoryField" autocomplete="off" />
+          </label>
+        </div>
+
+        <div id="compatibilityNotice" class="notice" role="status"></div>
+
+        <details class="advanced">
+          <summary>Advanced JSON configuration</summary>
+          <p>Edit every section, badge, link, and project directly.</p>
+          <textarea id="configEditor" rows="18" spellcheck="false" aria-label="JSON configuration"></textarea>
+        </details>
+
+        <div class="actions primary-actions">
+          <button class="button primary" id="generateButton" type="button">Generate README</button>
+          <button class="button" id="copyButton" type="button">Copy Markdown</button>
+        </div>
+        <div class="actions secondary-actions">
+          <button class="text-button" id="importButton" type="button">Import config</button>
+          <button class="text-button" id="exportConfigButton" type="button">Export config</button>
+          <button class="text-button" id="saveReadmeButton" type="button">Save README</button>
+          <input id="fileInput" type="file" accept="application/json,.json" hidden />
+        </div>
+      </aside>
+
+      <section class="result" aria-label="Generated README">
+        <div class="result-header">
+          <div>
+            <p class="eyebrow">Output</p>
+            <h2>README.md</h2>
+          </div>
+          <div class="tabs" role="tablist" aria-label="Output view">
+            <button class="tab active" id="previewTab" type="button" role="tab" aria-selected="true" aria-controls="previewPane" tabindex="0">Preview</button>
+            <button class="tab" id="sourceTab" type="button" role="tab" aria-selected="false" aria-controls="sourcePane" tabindex="-1">Markdown</button>
+          </div>
+        </div>
+
+        <div id="messages" class="messages" aria-live="polite"></div>
+        <article id="previewPane" class="markdown-preview" role="tabpanel" aria-labelledby="previewTab"></article>
+        <textarea id="sourcePane" class="source-pane" role="tabpanel" aria-labelledby="sourceTab" spellcheck="false" readonly hidden></textarea>
+        <p class="preview-note">Preview is intentionally approximate. The generated Markdown is the source of truth for your selected forge.</p>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="./app.mjs"></script>
+  </body>
+</html>

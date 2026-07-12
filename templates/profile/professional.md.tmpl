@@ -1,0 +1,80 @@
+{{#if modeEnhanced}}
+<div align="center">
+{{#if owner.avatar}}
+  <img src="{{owner.avatarHtml}}" alt="Portrait of {{owner.nameHtml}}" width="128" />
+{{/if}}
+
+  <h1>{{theme.iconHtml}} {{owner.nameHtml}}</h1>
+  <p><strong>{{branding.taglineHtml}}</strong></p>
+
+{{#if badges}}
+  <p>{{#each badges}}<a href="{{this.urlHtml}}"><img src="{{this.imageHtml}}" alt="{{this.altHtml}}" /></a> {{/each}}</p>
+{{/if}}
+
+{{#if socials}}
+  <p>{{#each socials}}<a href="{{this.urlHtml}}">{{this.labelHtml}}</a>{{this.separator}}{{/each}}</p>
+{{/if}}
+</div>
+{{else}}
+{{#if owner.avatar}}
+![Portrait of {{owner.name}}]({{owner.avatar}})
+
+{{/if}}
+# {{theme.icon}} {{owner.name}}
+
+**{{branding.tagline}}**
+
+{{#if badges}}
+{{#each badges}}[![{{this.alt}}]({{this.image}})]({{this.url}}) {{/each}}
+{{/if}}
+
+{{#if socials}}
+{{#each socials}}[{{this.label}}]({{this.url}}){{this.separator}}{{/each}}
+{{/if}}
+{{/if}}
+
+{{#if branding.banner}}
+![{{owner.name}} profile banner]({{branding.banner}})
+{{/if}}
+
+## About me
+
+{{about}}
+
+{{#if owner.location}}
+- Based in **{{owner.location}}**
+{{/if}}
+{{#if owner.website}}
+- Website: [{{owner.website}}]({{owner.website}})
+{{/if}}
+{{#if owner.email}}
+- Contact: [{{owner.email}}](mailto:{{owner.email}})
+{{/if}}
+
+{{#if skills}}
+## Focus and skills
+
+| Area | What I work with |
+| --- | --- |
+{{#each skills}}| **{{this.name}}** | {{this.detail}} |
+{{/each}}
+{{/if}}
+
+{{#if projects}}
+## Selected work
+
+| Project | What it does | Stack |
+| --- | --- | --- |
+{{#each projects}}| [**{{this.name}}**]({{this.url}}) | {{this.description}} | {{this.stack}} |
+{{/each}}
+{{/if}}
+
+[readme-port-manual-start-current-focus]: # (readme-port:manual)
+
+[readme-port-manual-end-current-focus]: # (/readme-port:manual)
+
+{{#if options.showProviderNote}}
+---
+
+Profile placement for **{{provider.name}}**: {{provider.profilePath}}.
+{{/if}}

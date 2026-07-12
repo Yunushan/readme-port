@@ -1,0 +1,32 @@
+name: Template proposal
+description: Propose a new project, profile, or organization template.
+title: "[Template]: "
+labels: [template, enhancement]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Template type
+      options: [Project, Profile, Organization]
+    validations:
+      required: true
+  - type: input
+    id: audience
+    attributes:
+      label: Intended audience
+      placeholder: CLI libraries, DevOps engineers, research projects...
+    validations:
+      required: true
+  - type: textarea
+    id: sections
+    attributes:
+      label: Essential sections and visual direction
+    validations:
+      required: true
+  - type: textarea
+    id: fallback
+    attributes:
+      label: Portable fallback
+      description: Explain how the design remains useful without HTML or provider-specific widgets.
+    validations:
+      required: true

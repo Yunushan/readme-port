@@ -1,0 +1,57 @@
+{{#if branding.logo}}
+![{{branding.title}} logo]({{branding.logo}})
+
+{{/if}}
+# {{theme.icon}} {{branding.title}}
+
+**{{branding.tagline}}**
+
+{{#if branding.banner}}
+![{{branding.title}} preview]({{branding.banner}})
+{{/if}}
+
+{{about}}
+
+{{#if features}}
+## Features
+
+{{#each features}}- **{{this.title}}** — {{this.description}}
+{{/each}}
+{{/if}}
+
+{{#if quickStart.code}}
+## Quick start
+
+{{quickStart.fence}}{{quickStart.language}}
+{{quickStart.code}}
+{{quickStart.fence}}
+{{/if}}
+
+{{#if usage}}
+## Usage
+
+{{#each usage}}
+### {{this.title}}
+
+{{this.description}}
+
+{{this.fence}}{{this.language}}
+{{this.code}}
+{{this.fence}}
+{{/each}}
+{{/if}}
+
+## Contributing
+
+{{#if links.contributing}}See the [contribution guide]({{links.contributing}}).
+{{/if}}
+{{#if links.support}}Report problems through [support]({{links.support}}).
+{{/if}}
+
+[readme-port-manual-start-project-notes]: # (readme-port:manual)
+
+[readme-port-manual-end-project-notes]: # (/readme-port:manual)
+
+## License
+
+[{{license.name}}]({{license.url}}) (`{{license.spdx}}`)

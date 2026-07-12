@@ -1,0 +1,8 @@
+image: node:24-bookworm
+
+stages: [test]
+
+readme_port_ci:
+  stage: test
+  script:
+    - npm run ci

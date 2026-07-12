@@ -1,0 +1,69 @@
+{{#if modeEnhanced}}
+<div align="center">
+{{#if branding.logo}}
+  <img src="{{branding.logoHtml}}" alt="{{branding.titleHtml}} logo" width="112" />
+{{/if}}
+  <h1>{{theme.iconHtml}} {{branding.titleHtml}}</h1>
+  <p><strong>{{branding.taglineHtml}}</strong></p>
+{{#if navigation}}
+  <p>{{#each navigation}}<a href="{{this.urlHtml}}">{{this.labelHtml}}</a>{{this.separator}}{{/each}}</p>
+{{/if}}
+</div>
+{{else}}
+{{#if branding.logo}}
+![{{branding.title}} logo]({{branding.logo}})
+
+{{/if}}
+# {{theme.icon}} {{branding.title}}
+
+**{{branding.tagline}}**
+
+{{#if navigation}}
+{{#each navigation}}[{{this.label}}]({{this.url}}){{this.separator}}{{/each}}
+{{/if}}
+{{/if}}
+
+{{#if branding.banner}}
+![{{branding.title}} banner]({{branding.banner}})
+{{/if}}
+
+## Our mission
+
+{{mission}}
+
+{{#if features}}
+## What we value
+
+{{#each features}}- **{{this.title}}** — {{this.description}}
+{{/each}}
+{{/if}}
+
+{{#if projects}}
+## Projects
+
+| Project | Purpose | Stack |
+| --- | --- | --- |
+{{#each projects}}| [**{{this.name}}**]({{this.url}}) | {{this.description}} | {{this.stack}} |
+{{/each}}
+{{/if}}
+
+## How to participate
+
+{{#if links.contributing}}- Read our [contribution guide]({{links.contributing}}).
+{{/if}}
+{{#if links.support}}- Find an issue through [community support]({{links.support}}).
+{{/if}}
+{{#if links.security}}- Review the [security policy]({{links.security}}) before reporting a vulnerability.
+{{/if}}
+
+[readme-port-manual-start-community-noticeboard]: # (readme-port:manual)
+
+[readme-port-manual-end-community-noticeboard]: # (/readme-port:manual)
+
+## License
+
+Unless a project states otherwise, shared template content is available under the [{{license.name}}]({{license.url}}) (`{{license.spdx}}`).
+
+{{#if options.showProviderNote}}
+> **{{provider.name}} organization placement:** {{provider.organizationProfilePath}}.
+{{/if}}

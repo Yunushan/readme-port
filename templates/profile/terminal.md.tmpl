@@ -1,0 +1,49 @@
+{{#if owner.avatar}}
+![Portrait of {{owner.name}}]({{owner.avatar}})
+
+{{/if}}
+# {{theme.icon}} {{owner.name}}
+
+{{#if branding.banner}}
+![{{owner.name}} profile banner]({{branding.banner}})
+{{/if}}
+
+```text
+$ whoami
+{{owner.username}}
+
+$ cat mission.txt
+{{about}}
+
+$ pwd
+{{owner.location}}
+```
+
+{{#if skills}}
+## `skills --list`
+
+{{#each skills}}- `{{this.name}}` — {{this.detail}}
+{{/each}}
+{{/if}}
+
+{{#if projects}}
+## `projects --featured`
+
+{{#each projects}}- [{{this.name}}]({{this.url}}) — {{this.description}} ({{this.stack}})
+{{/each}}
+{{/if}}
+
+[readme-port-manual-start-current-focus]: # (readme-port:manual)
+
+[readme-port-manual-end-current-focus]: # (/readme-port:manual)
+
+{{#if socials}}
+## `contact --all`
+
+{{#each socials}}- [{{this.label}}]({{this.url}})
+{{/each}}
+{{/if}}
+
+{{#if options.showProviderNote}}
+> {{provider.name}} placement: {{provider.profilePath}}.
+{{/if}}

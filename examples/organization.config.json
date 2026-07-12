@@ -1,0 +1,73 @@
+{
+  "$schema": "../schema/readme-port.schema.json",
+  "schemaVersion": 1,
+  "kind": "organization",
+  "template": "organization/community",
+  "provider": {
+    "id": "github",
+    "mode": "enhanced",
+    "baseUrl": "https://github.com"
+  },
+  "theme": "corporate",
+  "branding": {
+    "title": "Open Atlas Collective",
+    "tagline": "Small, dependable tools for teams operating open infrastructure.",
+    "logo": "../../assets/logo.svg",
+    "banner": ""
+  },
+  "repository": {
+    "owner": "open-atlas",
+    "name": ".github",
+    "defaultBranch": "main"
+  },
+  "owner": {
+    "name": "Open Atlas Collective",
+    "username": "open-atlas",
+    "bio": ""
+  },
+  "about": "We maintain focused infrastructure tools, examples, and operational documentation in the open.",
+  "mission": "We make production infrastructure easier to understand, operate, and hand over by publishing focused tools with clear defaults and honest limitations.",
+  "badges": [],
+  "navigation": [
+    { "label": "Projects", "anchor": "projects" },
+    { "label": "Participate", "anchor": "how-to-participate" },
+    { "label": "Contributing", "url": "../../CONTRIBUTING.md" },
+    { "label": "Security", "url": "../../SECURITY.md" }
+  ],
+  "features": [
+    { "title": "Clarity", "description": "Document trade-offs, ownership, and failure modes." },
+    { "title": "Portability", "description": "Prefer open formats and deployable, self-hosted components." },
+    { "title": "Kind maintenance", "description": "Keep contribution paths welcoming and scope sustainable." }
+  ],
+  "stack": [],
+  "quickStart": { "language": "bash", "commands": [] },
+  "installation": [],
+  "usage": [],
+  "configuration": [],
+  "roadmap": [],
+  "skills": [],
+  "projects": [
+    { "name": "Harborlight", "description": "A compact GitOps platform starter.", "url": "https://example.com/harborlight", "stack": ["Kubernetes", "Argo CD"] },
+    { "name": "Signalbook", "description": "Runbooks and operational decisions kept close to code.", "url": "https://example.com/signalbook", "stack": ["Markdown", "OpenTelemetry"] }
+  ],
+  "socials": [],
+  "links": {
+    "documentation": "../../docs/",
+    "demo": "",
+    "support": "",
+    "security": "../../SECURITY.md",
+    "contributing": "../../CONTRIBUTING.md",
+    "license": "../../LICENSE"
+  },
+  "license": {
+    "name": "MIT License",
+    "spdx": "MIT",
+    "url": "../../LICENSE"
+  },
+  "custom": {},
+  "options": {
+    "showTableOfContents": true,
+    "preserveManualRegions": true,
+    "showProviderNote": false
+  }
+}

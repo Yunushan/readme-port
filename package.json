@@ -1,0 +1,60 @@
+{
+  "name": "readme-port",
+  "version": "1.0.0",
+  "description": "One config. Beautiful, portable READMEs for every forge.",
+  "type": "module",
+  "bin": {
+    "readme-port": "./bin/readme-port.mjs"
+  },
+  "scripts": {
+    "test": "node --test",
+    "check": "node scripts/check.mjs",
+    "examples": "node scripts/generate-examples.mjs",
+    "ci": "npm run test && npm run check"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "files": [
+    "bin",
+    "src",
+    "templates",
+    "themes",
+    "schema",
+    "web",
+    "assets",
+    "docs",
+    "examples",
+    "scripts",
+    "test",
+    "CHANGELOG.md",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "SECURITY.md",
+    "SUPPORT.md",
+    "THIRD_PARTY_NOTICES.md",
+    "LICENSE",
+    "README.md"
+  ],
+  "keywords": [
+    "readme",
+    "github-profile",
+    "gitlab-profile",
+    "gitea",
+    "forgejo",
+    "bitbucket",
+    "markdown",
+    "template",
+    "generator"
+  ],
+  "author": "Yunus Çoğal",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yunushan/readme-port.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Yunushan/readme-port/issues"
+  },
+  "homepage": "https://github.com/Yunushan/readme-port#readme"
+}

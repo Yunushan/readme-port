@@ -1,0 +1,130 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Yunushan/readme-port/main/schema/readme-port.schema.json",
+  "schemaVersion": 1,
+  "kind": "project",
+  "template": "project/flagship",
+  "provider": {
+    "id": "github",
+    "mode": "enhanced",
+    "baseUrl": "https://github.com"
+  },
+  "theme": "midnight",
+  "branding": {
+    "title": "ReadmePort",
+    "tagline": "One config. Beautiful READMEs for every forge.",
+    "logo": "assets/logo.svg",
+    "banner": "assets/banner.svg"
+  },
+  "repository": {
+    "owner": "Yunushan",
+    "name": "readme-port",
+    "defaultBranch": "main"
+  },
+  "owner": {
+    "name": "Yunus Çoğal",
+    "username": "Yunushan",
+    "bio": "Building portable tools for polished project, profile, and organization READMEs.",
+    "location": "",
+    "website": "",
+    "email": ""
+  },
+  "about": "ReadmePort turns one human-editable JSON configuration into polished, provider-aware Markdown. Use the CLI for repeatable builds or the local Studio for visual editing, previews, and downloads.",
+  "badges": [
+    {
+      "alt": "tests passing",
+      "image": "https://img.shields.io/badge/tests-passing-22c55e",
+      "url": ".github/workflows/ci.yml"
+    },
+    {
+      "alt": "MIT license",
+      "image": "https://img.shields.io/badge/license-MIT-0ea5e9",
+      "url": "LICENSE"
+    },
+    {
+      "alt": "six forge targets",
+      "image": "https://img.shields.io/badge/forges-6-8b5cf6",
+      "url": "docs/PLATFORMS.md"
+    }
+  ],
+  "navigation": [
+    { "label": "Quick start", "anchor": "quick-start" },
+    { "label": "Templates", "url": "assets/template-gallery.svg" },
+    { "label": "Platforms", "url": "docs/PLATFORMS.md" },
+    { "label": "Customization", "url": "docs/CUSTOMIZATION.md" },
+    { "label": "Contributing", "url": "CONTRIBUTING.md" },
+    { "label": "License", "url": "LICENSE" }
+  ],
+  "features": [
+    { "title": "Forge aware", "description": "Build for GitHub, GitLab, Gitea, Forgejo, Bitbucket, or portable Markdown." },
+    { "title": "Easy to edit", "description": "Change one documented JSON file, use the Studio, or eject any template." },
+    { "title": "Safe regeneration", "description": "Keep hand-written notes inside named manual regions across rebuilds." }
+  ],
+  "stack": [
+    { "name": "Node.js", "detail": "Zero-runtime-dependency CLI and local server" },
+    { "name": "JSON", "detail": "Schema-backed, portable configuration" },
+    { "name": "Markdown", "detail": "Provider-aware output with a portable fallback" }
+  ],
+  "quickStart": {
+    "language": "bash",
+    "commands": [
+      "npm install --global github:Yunushan/readme-port",
+      "readme-port init",
+      "readme-port build --force"
+    ]
+  },
+  "installation": [
+    {
+      "title": "Create a configuration",
+      "description": "Generate a starter for a project, personal profile, or organization.",
+      "language": "bash",
+      "code": "readme-port init --kind project"
+    },
+    {
+      "title": "Preview in Studio",
+      "description": "Open the local editor without sending configuration data to a hosted service.",
+      "language": "bash",
+      "code": "readme-port serve"
+    }
+  ],
+  "usage": [
+    {
+      "title": "Generate every provider variant",
+      "description": "Write reviewable outputs into a staging directory before publishing the one you want.",
+      "language": "bash",
+      "code": "readme-port build --provider all --output dist"
+    }
+  ],
+  "configuration": [
+    { "key": "kind", "required": true, "default": "project", "description": "project, profile, or organization" },
+    { "key": "template", "required": true, "default": "project/flagship", "description": "A bundled or ejected template ID" },
+    { "key": "provider.id", "required": true, "default": "github", "description": "The forge whose URLs and conventions should be used" },
+    { "key": "provider.mode", "required": true, "default": "enhanced", "description": "enhanced or portable Markdown" }
+  ],
+  "roadmap": [
+    { "title": "Project, profile, and organization templates", "done": true },
+    { "title": "CLI and local visual Studio", "done": true },
+    { "title": "Six provider targets", "done": true }
+  ],
+  "skills": [],
+  "projects": [],
+  "socials": [],
+  "links": {
+    "documentation": "docs/GETTING_STARTED.md",
+    "demo": "",
+    "support": "SUPPORT.md",
+    "security": "SECURITY.md",
+    "contributing": "CONTRIBUTING.md",
+    "license": "LICENSE"
+  },
+  "license": {
+    "name": "MIT License",
+    "spdx": "MIT",
+    "url": "LICENSE"
+  },
+  "custom": {},
+  "options": {
+    "showTableOfContents": true,
+    "preserveManualRegions": true,
+    "showProviderNote": false
+  }
+}

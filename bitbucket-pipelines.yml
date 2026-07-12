@@ -1,0 +1,8 @@
+image: node:24-bookworm
+
+pipelines:
+  default:
+    - step:
+        name: Test and verify ReadmePort
+        script:
+          - npm run ci

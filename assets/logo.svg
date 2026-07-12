@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">ReadmePort logo</title>
+  <desc id="desc">A document passing through a glowing portal</desc>
+  <defs>
+    <linearGradient id="frame" x1="22" y1="18" x2="140" y2="145" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#a78bfa"/>
+      <stop offset="0.52" stop-color="#7c3aed"/>
+      <stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+    <linearGradient id="paper" x1="49" y1="42" x2="105" y2="117" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#cbd5e1"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect x="9" y="9" width="142" height="142" rx="38" fill="#0b1020" stroke="#242d43" stroke-width="2"/>
+  <path d="M31 45c-10 15-14 34-9 52 5 20 19 36 38 43" fill="none" stroke="url(#frame)" stroke-width="9" stroke-linecap="round" filter="url(#glow)"/>
+  <path d="M129 115c10-15 14-34 9-52-5-20-19-36-38-43" fill="none" stroke="url(#frame)" stroke-width="9" stroke-linecap="round" filter="url(#glow)"/>
+  <path d="M50 35h43l20 20v66a7 7 0 0 1-7 7H50a7 7 0 0 1-7-7V42a7 7 0 0 1 7-7Z" fill="url(#paper)"/>
+  <path d="M93 35v17a5 5 0 0 0 5 5h15" fill="#94a3b8"/>
+  <path d="M58 72h40M58 86h40M58 100h25" fill="none" stroke="#4c1d95" stroke-width="5" stroke-linecap="round"/>
+  <path d="m101 94 15 11-15 11v-7H87v-8h14v-7Z" fill="#06b6d4" filter="url(#glow)"/>
+</svg>

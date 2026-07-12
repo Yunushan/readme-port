@@ -1,0 +1,262 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Yunushan/readme-port/raw/main/schema/readme-port.schema.json",
+  "title": "ReadmePort configuration",
+  "description": "Configuration for generating a project, profile, or organization README.",
+  "type": "object",
+  "required": ["schemaVersion", "kind", "template", "provider", "branding"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "schemaVersion": { "const": 1 },
+    "kind": { "enum": ["project", "profile", "organization"] },
+    "template": {
+      "enum": [
+        "project/flagship",
+        "project/minimal",
+        "project/docs-hub",
+        "profile/professional",
+        "profile/terminal",
+        "profile/minimal",
+        "organization/community"
+      ]
+    },
+    "customTemplate": { "type": "string", "minLength": 1 },
+    "theme": { "enum": ["midnight", "nord", "terminal", "corporate"] },
+    "provider": {
+      "type": "object",
+      "required": ["id", "mode"],
+      "properties": {
+        "id": { "enum": ["portable", "github", "gitlab", "gitea", "forgejo", "bitbucket"] },
+        "mode": { "enum": ["portable", "enhanced"] },
+        "baseUrl": { "type": "string", "format": "uri" }
+      },
+      "additionalProperties": false
+    },
+    "branding": {
+      "type": "object",
+      "required": ["title", "tagline"],
+      "properties": {
+        "title": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "tagline": { "type": "string", "maxLength": 240 },
+        "logo": { "type": "string" },
+        "banner": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "repository": {
+      "type": "object",
+      "properties": {
+        "owner": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "defaultBranch": { "type": "string", "default": "main" },
+        "url": { "type": "string", "format": "uri" }
+      },
+      "additionalProperties": false
+    },
+    "owner": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "username": { "type": "string" },
+        "bio": { "type": "string" },
+        "location": { "type": "string" },
+        "website": { "type": "string" },
+        "email": { "type": "string" },
+        "avatar": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "about": { "type": "string" },
+    "mission": { "type": "string" },
+    "badges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["image"],
+        "properties": {
+          "alt": { "type": "string" },
+          "label": { "type": "string" },
+          "image": { "type": "string" },
+          "url": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "navigation": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "type": "string" },
+          {
+            "type": "object",
+            "required": ["label"],
+            "properties": {
+              "label": { "type": "string" },
+              "anchor": { "type": "string" },
+              "url": { "type": "string" }
+            },
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "features": { "$ref": "#/$defs/namedDetails" },
+    "stack": { "$ref": "#/$defs/namedDetails" },
+    "skills": { "$ref": "#/$defs/namedDetails" },
+    "installation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title"],
+        "properties": {
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "language": { "$ref": "#/$defs/codeLanguage" },
+          "code": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "usage": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title", "code"],
+        "properties": {
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "language": { "$ref": "#/$defs/codeLanguage" },
+          "code": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "quickStart": {
+      "type": "object",
+      "properties": {
+        "language": { "$ref": "#/$defs/codeLanguage" },
+        "commands": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "configuration": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["key", "description"],
+        "properties": {
+          "key": { "type": "string" },
+          "required": { "type": "boolean" },
+          "default": {},
+          "description": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "roadmap": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["title"],
+        "properties": {
+          "title": { "type": "string" },
+          "done": { "type": "boolean" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "description", "url"],
+        "properties": {
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "url": { "type": "string" },
+          "stack": {
+            "oneOf": [
+              { "type": "string" },
+              { "type": "array", "items": { "type": "string" } }
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "socials": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["label", "url"],
+        "properties": {
+          "label": { "type": "string" },
+          "url": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "links": {
+      "type": "object",
+      "properties": {
+        "documentation": { "type": "string" },
+        "demo": { "type": "string" },
+        "support": { "type": "string" },
+        "security": { "type": "string" },
+        "contributing": { "type": "string" },
+        "license": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "license": {
+      "type": "object",
+      "required": ["name", "spdx", "url"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "spdx": { "type": "string", "minLength": 1 },
+        "url": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "custom": {
+      "type": "object",
+      "description": "User-defined values exposed to custom templates under custom.*",
+      "additionalProperties": true
+    },
+    "options": {
+      "type": "object",
+      "properties": {
+        "showTableOfContents": { "type": "boolean" },
+        "preserveManualRegions": { "type": "boolean" },
+        "showProviderNote": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "codeLanguage": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^[^\\s`]+$"
+    },
+    "namedDetails": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "type": "string" },
+          {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "title": { "type": "string" },
+              "detail": { "type": "string" },
+              "description": { "type": "string" }
+            },
+            "additionalProperties": false
+          }
+        ]
+      }
+    }
+  },
+  "additionalProperties": false
+}

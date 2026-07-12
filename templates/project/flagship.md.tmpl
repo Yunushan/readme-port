@@ -1,0 +1,136 @@
+{{#if modeEnhanced}}
+<div align="center">
+{{#if branding.logo}}
+  <img src="{{branding.logoHtml}}" alt="{{branding.titleHtml}} logo" width="104" />
+{{/if}}
+
+  <h1>{{theme.iconHtml}} {{branding.titleHtml}}</h1>
+
+  <p><strong>{{branding.taglineHtml}}</strong></p>
+
+{{#if badges}}
+  <p>{{#each badges}}<a href="{{this.urlHtml}}"><img src="{{this.imageHtml}}" alt="{{this.altHtml}}" /></a> {{/each}}</p>
+{{/if}}
+
+{{#if navigation}}
+  <p>{{#each navigation}}<a href="{{this.urlHtml}}">{{this.labelHtml}}</a>{{this.separator}}{{/each}}</p>
+{{/if}}
+</div>
+{{else}}
+{{#if branding.logo}}
+![{{branding.title}} logo]({{branding.logo}})
+
+{{/if}}
+# {{theme.icon}} {{branding.title}}
+
+**{{branding.tagline}}**
+
+{{#if badges}}
+{{#each badges}}[![{{this.alt}}]({{this.image}})]({{this.url}}) {{/each}}
+{{/if}}
+
+{{#if navigation}}
+{{#each navigation}}[{{this.label}}]({{this.url}}){{this.separator}}{{/each}}
+{{/if}}
+{{/if}}
+
+{{#if branding.banner}}
+![{{branding.title}} preview]({{branding.banner}})
+{{/if}}
+
+{{about}}
+
+{{#if features}}
+## At a glance
+
+| Capability | What it gives you |
+| --- | --- |
+{{#each features}}| **{{this.title}}** | {{this.description}} |
+{{/each}}
+{{/if}}
+
+{{#if stack}}
+## Built with
+
+| Technology | Role |
+| --- | --- |
+{{#each stack}}| **{{this.name}}** | {{this.detail}} |
+{{/each}}
+{{/if}}
+
+{{#if quickStart.code}}
+## Quick start
+
+{{quickStart.fence}}{{quickStart.language}}
+{{quickStart.code}}
+{{quickStart.fence}}
+{{/if}}
+
+{{#if installation}}
+## Installation
+
+{{#each installation}}
+### {{this.number}}. {{this.title}}
+
+{{this.description}}
+
+{{#if this.code}}
+{{this.fence}}{{this.language}}
+{{this.code}}
+{{this.fence}}
+{{/if}}
+{{/each}}
+{{/if}}
+
+{{#if usage}}
+## Usage
+
+{{#each usage}}
+### {{this.title}}
+
+{{this.description}}
+
+{{this.fence}}{{this.language}}
+{{this.code}}
+{{this.fence}}
+{{/each}}
+{{/if}}
+
+{{#if configuration}}
+## Configuration
+
+| Option | Required | Default | Description |
+| --- | :---: | --- | --- |
+{{#each configuration}}| `{{this.key}}` | {{this.required}} | `{{this.default}}` | {{this.description}} |
+{{/each}}
+{{/if}}
+
+{{#if roadmap}}
+## Roadmap
+
+{{#each roadmap}}- [{{this.mark}}] {{this.title}}
+{{/each}}
+{{/if}}
+
+## Contributing and support
+
+{{#if links.contributing}}Contributions are welcome. Read the [contribution guide]({{links.contributing}}) before opening a change.
+{{/if}}
+{{#if links.support}}For help or feature requests, use [support]({{links.support}}).
+{{/if}}
+{{#if links.security}}Security concerns belong in the [security policy]({{links.security}}).
+{{/if}}
+
+[readme-port-manual-start-project-notes]: # (readme-port:manual)
+
+[readme-port-manual-end-project-notes]: # (/readme-port:manual)
+
+## License
+
+Released under the [{{license.name}}]({{license.url}}) (`{{license.spdx}}`).
+
+{{#if options.showProviderNote}}
+---
+
+Generated for **{{provider.name}}** in **{{provider.mode}}** mode. Repository: [{{repository.owner}}/{{repository.name}}]({{repository.url}}).
+{{/if}}
