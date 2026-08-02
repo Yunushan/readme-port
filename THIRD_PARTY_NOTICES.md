@@ -1,6 +1,6 @@
 # Third-party notices
 
-ReadmePort's code, templates, and bundled SVG artwork are original and released under the MIT License. No profile artwork or README content was copied from the inspiration repositories.
+ReadmePort's code, templates, and bundled SVG artwork are original and released under the 0BSD License. No profile artwork or README content was copied from the inspiration repositories.
 
 The project design was informed by these public resources:
 
