@@ -36,7 +36,7 @@ if (!changelog.includes(`## ${packageJson.version}`)
   && !changelog.includes(`## [${packageJson.version}]`)) {
   fail('CHANGELOG.md does not contain the package version');
 }
-if (!license.startsWith('MIT License')) fail('LICENSE is not the MIT license text');
+if (!license.startsWith('BSD Zero Clause License')) fail('LICENSE is not the 0BSD license text');
 
 const theme = await readJson(path.join(root, 'themes', 'midnight.json'));
 
