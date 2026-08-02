@@ -10,7 +10,7 @@
     <img src="https://img.shields.io/badge/version-v1.0.0-8b5cf6" alt="Version 1.0.0" />
     <img src="https://img.shields.io/badge/runtime%20dependencies-0-22c55e" alt="Zero runtime dependencies" />
     <img src="https://img.shields.io/badge/Node.js-%E2%89%A522-339933?logo=nodedotjs&logoColor=white" alt="Node.js 22 or newer" />
-    <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-0ea5e9" alt="MIT License" /></a>
+    <a href="LICENSE"><img src="https://img.shields.io/badge/license-0BSD-0ea5e9" alt="0BSD License" /></a>
   </p>
 
   <p>
@@ -229,4 +229,4 @@ ReadmePort uses original code, templates, copy, and artwork. Its product directi
 
 ## License
 
-ReadmePort is free and open source under the [MIT License](LICENSE). Copyright © 2026 Yunus Çoğal.
+ReadmePort is free and open source under the [0BSD License](LICENSE). Copyright © 2026 Yunus Çoğal.
