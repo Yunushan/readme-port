@@ -38,4 +38,4 @@ See [Template authoring](docs/TEMPLATE_AUTHORING.md) for the supported syntax.
 - Run `npm run ci` and include the result.
 - Keep generated output and source templates in the same change.
 
-By contributing, you agree that your contribution is licensed under the repository's MIT License.
+By contributing, you agree that your contribution is licensed under the repository's 0BSD License.
